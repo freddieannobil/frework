@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title> Installation</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="eaglenetmedia.com">
+
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+
+    <!-- CSS STYLES -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.css">
+    <link href="{{ asset('/assets/main/css/main.css') }}" rel="stylesheet" type="text/css" />
+
+
+    <!-- FONTS -->
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300italic,300,400italic,600,600italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- SCRIPTS -->
+    <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if IE]><html class="ie" lang="en"> <![endif]-->
+
+
+</head>
+<body >
+
+<div class="row">
+    <div class="small-4 large-4 columns">
+        <hr>
+    </div>
+    <div class="small-4 large-4 columns">
+
+        <div class="margin-top"></div>
+        <div class="text-center">
+            <h3>Webberdoo Installation</h3>
+        </div>
+        <hr>
+
+
+
+        {% if app.session.flashBag.has('db_success') %}
+            <div class="label success">
+                {% for msg in app.session.flashBag.get('db_success') %}
+                    {{ msg }}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {{ form_start(db_form) }}
+        <div class="box-body">
+            {{ form_widget(db_form) }}
+            <button type="submit" class="expanded button" formnovalidate>1. Add Database</button>
+        </div>
+        {{ form_end(db_form) }}
+
+        <hr>
+
+
+
+
+        {% if app.session.flashBag.has('admin_success') %}
+            <div class="label success">
+                {% for msg in app.session.flashBag.get('admin_success') %}
+                    {{ msg }}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+
+        {{ form_start(admin_form) }}
+        <div class="box-body">
+            {{ form_widget(admin_form) }}
+            <button type="submit" class="expanded button" formnovalidate>2. Add Default Admin Details </button>
+        </div>
+        {{ form_end(admin_form) }}
+
+        <hr/>
+
+
+
+        {% if app.session.flashBag.has('remove_success') %}
+            <div class="label success">
+                {% for msg in app.session.flashBag.get('remove_success') %}
+                    {{ msg }}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {{ form_start(remove_form) }}
+        <div class="box-body">
+            {{ form_widget(remove_form) }}
+            <button type="submit" class="expanded button" formnovalidate>3. Delete install file </button>
+        </div>
+        {{ form_end(remove_form) }}
+
+
+
+
+    </div>
+    <div class="small-4 large-4 columns">
+        <hr>
+    </div>
+</div>
+
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+<script src="{{ asset('web/wdooassets/fd/js/enm-ajax-form.js') }}"></script>
+<script src="{{ asset('web/wdooassets/fd/js/enm-user-ajax-form.js') }}"></script>
+<script src="{{ asset('web/wdooassets/fd/js/ajax-form.js') }}"></script>
+<script src="/assets/main/js/main.js" type="text/javascript"></script>
+)
+<script>
+    var spinner = '<i class="fa fa-spinner fa-spin fa-3x"></i>';
+</script>
+<script>
+    var site_url = "<?php echo url('/'); ?>";
+</script>
+
+
+</body>
+</html>

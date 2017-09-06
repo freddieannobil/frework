@@ -1,0 +1,58 @@
+{% extends 'default/layout/base.html.twig' %}
+{% form_theme form 'default/form/errors.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block title %}Login - {% endblock %}
+
+{% block body %}
+
+
+    {% if app.session.flashBag.has('success_activation') %}
+        {% for msg in app.session.flashBag.get('success_activation') %}
+            {{ msg|raw }}
+        {% endfor %}
+    {% endif %}
+
+    {% if app.session.flashBag.has('success_registration') %}
+        {% for msg in app.session.flashBag.get('success_registration') %}
+            {{ msg|raw }}
+        {% endfor %}
+    {% endif %}
+    <section id="item-featured-search">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="category-page-title"><i class="fa fa-user" aria-hidden="true"></i> LOGIN</h3>
+                </div>
+            </div>
+            <div class="animated fadeIn">
+            </div>
+        </div>
+    </section>
+
+    <section class="page-header">
+        <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div id="auth" class="animated fadeIn">
+
+                {% if error %}
+                    <div class="alert alert-warning">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+
+                {{ form_start(form) }}
+
+                {{ form_row(form._username) }}
+                {{ form_row(form._password) }}
+
+                <button type="submit" class="btn btn-primary btn-lg btn-block" formnovalidate><span class="fa fa-lock"></span> Login</button>
+                    <p><a href="{{ path('recover_password') }}">Forgot password?</a></p>
+                {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+{% endblock %}

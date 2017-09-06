@@ -1,0 +1,54 @@
+{% extends 'default/layout/base.html.twig' %}
+{% form_theme form 'default/form/errors.html.twig' %}
+
+{% block title %}Reset - {% endblock %}
+
+{% block body %}
+
+    <section id="item-featured-search">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="category-page-title"><i class="fa fa-user" aria-hidden="true"></i> ENTER NEW PASSWORD</h3>
+                </div>
+            </div>
+            <div class="animated fadeIn">
+            </div>
+        </div>
+    </section>
+
+    <section class="page-header">
+        <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div id="auth" class="animated fadeIn">
+
+                    {% if app.session.flashBag.has('password_user_error') %}
+                        <div class="alert alert-warning">
+                            {% for msg in app.session.flashBag.get('password_user_error') %}
+                                {{ msg|raw }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    {{ form_start(form) }}
+
+                    {{ form_row(form.email) }}
+                    {{ form_row(form.username) }}
+                    {{ form_row(form.first_name) }}
+                    {{ form_row(form.last_name) }}
+                    {{ form_row(form.plainPassword.first, {'label': 'Password'}) }}
+                    {{ form_row(form.plainPassword.second, {'label': 'Repeat Password'}) }}
+
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" formnovalidate> Submit</button>
+
+
+                    {{ form_end(form) }}
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

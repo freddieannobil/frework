@@ -1,0 +1,49 @@
+{% extends 'default/layout/base.html.twig' %}
+{% form_theme form 'default/form/errors.html.twig' %}
+
+{% block title %}Webberdoo{% endblock %}
+
+{% block body %}
+
+    {% if app.session.flashBag.has('success_verify_registration') %}
+        {% for msg in app.session.flashBag.get('success_verify_registration') %}
+            {{ msg|raw }}
+        {% endfor %}
+    {% endif %}
+
+    {% if app.session.flashBag.has('error_activation') %}
+        {% for msg in app.session.flashBag.get('error_activation') %}
+            {{ msg|raw }}
+        {% endfor %}
+    {% endif %}
+
+
+    <section class="page-header">
+        <div class="row">
+            <div class="small-6 large-centered columns">
+                <div id="auth">
+                    <div class="animated fadeIn">
+                    <h1><i class="fa fa-users" aria-hidden="true"></i> Register</h1>
+                    {{ form_start(form) }}
+
+                    {{ form_row(form.email) }}
+                    {{ form_row(form.username) }}
+                    {{ form_row(form.plainPassword.first, {'label': 'Password'}) }}
+                    {{ form_row(form.plainPassword.second, {'label': 'Repeat Password'}) }}
+                    {{ form_row(form.first_name) }}
+                    {{ form_row(form.last_name) }}
+                    <button type="submit" class="button" formnovalidate><span class="fa fa-lock"></span> Register</button>
+
+                    {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+{% endblock %}

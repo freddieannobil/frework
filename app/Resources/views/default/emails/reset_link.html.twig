@@ -1,0 +1,8 @@
+<h3>Rest Password!</h3>
+
+Hi {{ name|title }},
+
+<p>Your reset paasword link:  <a href="{{ url('reset_password', {'token': token}) }}">{{ url('reset_password', {'token': token}) }}</a>.</p>
+
+
+

@@ -1,0 +1,43 @@
+{% extends 'default/layout/base.html.twig' %}
+
+{% block title %}Welcome To TITLE{% endblock %}
+
+{% block body %}
+
+    <style>
+        .bg1{
+            background-color: red;
+        }
+
+        .bg2{
+            background-color: blue;
+        }
+    </style>
+
+    <div class="row">
+        <div class="small-12 large-10 columns bg1"><h3>Index template</h3></div>
+        <div class="small-12 large-2 columns bg2">{{ name }}</div>
+    </div>
+
+    <div class="row small-up-2 medium-up-3 large-up-4">
+        <div class="column column-block">
+            <img src="https://placehold.it/600x600" class="thumbnail" alt="">
+        </div>
+        <div class="column column-block">
+            <img src="https://placehold.it/600x600" class="thumbnail" alt="">
+        </div>
+        <div class="column column-block">
+            <img src="https://placehold.it/600x600" class="thumbnail" alt="">
+        </div>
+        <div class="column column-block">
+            <img src="https://placehold.it/600x600" class="thumbnail" alt="">
+        </div>
+        <div class="column column-block">
+            <img src="https://placehold.it/600x600" class="thumbnail" alt="">
+        </div>
+        <div class="column column-block">
+            <img src="https://placehold.it/600x600" class="thumbnail" alt="">
+        </div>
+    </div>
+
+{% endblock %}

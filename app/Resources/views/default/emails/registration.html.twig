@@ -1,0 +1,9 @@
+<h3>You did it! You registered!</h3>
+
+Hi {{ name|title }},
+
+<p>Activate your account by clicking this link:  <a href="{{ url('user_activate', {'active_hash': active_hash}) }}">{{ url('user_activate', {'active_hash': active_hash}) }}</a>.</p>
+
+
+<p>Thanks!</p>
+
