@@ -1,5 +1,11 @@
 {
-    "name": "frecreative/frework",
+    "name": "webberdoo/frework",
+    "description": "FreWork is a PHP Micro Framework built using Symfony. Run - composer create-project webberdoo/frework YOUR-FOLDER dev-master",
+    "homepage": "https://github.com/webberdoo/frework",
+    "keywords": [
+        "framework", "symfony"
+    ],
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "AppBundle\\": "src/AppBundle"
