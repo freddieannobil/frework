@@ -2,9 +2,9 @@
 parameters:
     database_host: 127.0.0.1
     database_port: null
-    database_name: webber10_frec
-    database_user: webber10_frec
-    database_password: alltheway
+    database_name: nul
+    database_user: null
+    database_password: null
     mailer_transport: smtp
     mailer_host: 127.0.0.1
     mailer_user: null
